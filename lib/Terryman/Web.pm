@@ -47,7 +47,7 @@ use Text::Xslate;
 # load plugins
 __PACKAGE__->load_plugins(
     'Web::FillInFormLite',
-    'Web::CSRFDefender',
+    #'Web::CSRFDefender',
 );
 
 # for your security
@@ -59,7 +59,7 @@ __PACKAGE__->add_trigger(
         $res->header( 'X-Content-Type-Options' => 'nosniff' );
 
         # http://blog.mozilla.com/security/2010/09/08/x-frame-options/
-        $res->header( 'X-Frame-Options' => 'DENY' );
+        #$res->header( 'X-Frame-Options' => 'DENY' );
 
         # Cache control.
         $res->header( 'Cache-Control' => 'private' );
@@ -72,6 +72,26 @@ __PACKAGE__->add_trigger(
         # ...
         return;
     },
+);
+
+__PACKAGE__->load_plugin(
+    'Web::Auth',
+    {
+        module => 'Facebook',
+        on_finished => sub {
+            my ($c, $token, $user) = @_;
+            my $name = $user->{name} || die;
+            $c->session->set('name' => $name);
+            $c->session->set('site' => 'facebook');
+            $c->session->set('token' => $token);
+            return $c->redirect('http://apps.facebook.com/social_recruiting_te/');
+        },
+        on_error => sub {
+            my ( $c, $error ) = @_;
+            warn ("auth_error!![$error]");
+            return $c->redirect('/');
+        },
+    }
 );
 
 1;
