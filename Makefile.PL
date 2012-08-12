@@ -21,6 +21,8 @@ WriteMakefile(
         # Terryman
         'Plack'                           => '1.0001',
         'Starman'                         => '0.3001',
+        'Server::Starter'                 => '0.11',
+        'Net::Server::SS::PreFork'        => '0.05',
         'Amon2::Plugin::Web::Auth'        => '0.02',
         'Facebook::Graph'                 => '1.0401',
     },

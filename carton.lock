@@ -10775,6 +10775,72 @@
          "target" : "Net::Server",
          "version" : "2.006"
       },
+      "Net::Server::SS::PreFork" : {
+         "dist" : "Net-Server-SS-PreFork-0.05",
+         "mymeta" : {
+            "abstract" : "a hot-deployable variant of Net::Server::PreFork",
+            "author" : [
+               "Kazuho Oku"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 0.93, CPAN::Meta::Converter version 2.120630",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Net-Server-SS-PreFork",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42",
+                     "HTTP::Server::Simple::CGI" : "0",
+                     "LWP::Simple" : "0",
+                     "Test::TCP" : "0.06"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "HTTP::Server::Simple::CGI" : "0",
+                     "LWP::Simple" : "0",
+                     "Net::Server" : "0",
+                     "Server::Starter" : "0.02",
+                     "Test::TCP" : "0.06"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.05"
+         },
+         "name" : "Net::Server::SS::PreFork",
+         "pathname" : "K/KA/KAZUHO/Net-Server-SS-PreFork-0.05.tar.gz",
+         "provides" : {
+            "Net::Server::SS::PreFork" : {
+               "file" : "Net/Server/SS/PreFork.pm",
+               "version" : "0.05"
+            }
+         },
+         "target" : "Net::Server::SS::PreFork",
+         "version" : "0.05"
+      },
       "Net::Twitter::Lite" : {
          "dist" : "Net-Twitter-Lite-0.11002",
          "mymeta" : {
@@ -12229,6 +12295,58 @@
          "target" : "Plack::Session",
          "version" : "0.14"
       },
+      "Proc::Wait3" : {
+         "dist" : "Proc-Wait3-0.04",
+         "mymeta" : {
+            "abstract" : "Perl extension for wait3 system call",
+            "author" : [
+               "C. Tilmes <curt@tilmes.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.56, CPAN::Meta::Converter version 2.120630",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Proc-Wait3",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.04"
+         },
+         "name" : "Proc::Wait3",
+         "pathname" : "C/CT/CTILMES/Proc-Wait3-0.04.tar.gz",
+         "provides" : {
+            "Proc::Wait3" : {
+               "file" : "Proc/Wait3.pm",
+               "version" : "0.04"
+            }
+         },
+         "target" : "Proc::Wait3",
+         "version" : "0.04"
+      },
       "Router::Simple" : {
          "dist" : "Router-Simple-0.09",
          "mymeta" : {
@@ -12468,6 +12586,125 @@
          },
          "target" : "SQL::Interp",
          "version" : "1.21"
+      },
+      "Scope::Guard" : {
+         "dist" : "Scope-Guard-0.20",
+         "mymeta" : {
+            "abstract" : "lexically-scoped resource management",
+            "author" : [
+               "chocolateboy <chocolate@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.56, CPAN::Meta::Converter version 2.120630",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Scope-Guard",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Test::More" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "perl" : "5.006001"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.20"
+         },
+         "name" : "Scope::Guard",
+         "pathname" : "C/CH/CHOCOLATE/Scope-Guard-0.20.tar.gz",
+         "provides" : {
+            "Scope::Guard" : {
+               "file" : "Scope/Guard.pm",
+               "version" : "0.20"
+            }
+         },
+         "target" : "Scope::Guard",
+         "version" : "0.20"
+      },
+      "Server::Starter" : {
+         "dist" : "Server-Starter-0.11",
+         "mymeta" : {
+            "abstract" : "a superdaemon for hot-deploying server programs",
+            "author" : [
+               "Kazuho Oku"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 1.00, CPAN::Meta::Converter version 2.120630",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Server-Starter",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42",
+                     "Test::TCP" : "0.11"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Getopt::Long" : "0",
+                     "List::MoreUtils" : "0",
+                     "Proc::Wait3" : "0",
+                     "Scope::Guard" : "0",
+                     "Test::TCP" : "0.11",
+                     "perl" : "5.008"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.11"
+         },
+         "name" : "Server::Starter",
+         "pathname" : "K/KA/KAZUHO/Server-Starter-0.11.tar.gz",
+         "provides" : {
+            "Server::Starter" : {
+               "file" : "Server/Starter.pm",
+               "version" : "0.11"
+            }
+         },
+         "target" : "Server::Starter",
+         "version" : "0.11"
       },
       "Spiffy" : {
          "dist" : "Spiffy-0.31",
