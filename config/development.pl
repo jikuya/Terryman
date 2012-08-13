@@ -20,7 +20,7 @@ if ( -d '/home/dotcloud/') {
         Facebook => {
             client_id       => '166312860171592',                    # アプリケーションID
             client_secret   => 'f6114315282544884d683712e3c37689',   # アプリケーション秘密鍵
-            callback_uri    => 'http://apps.facebook.com/social_recruiting_te/', # FacebookアプリURL
+            callback_uri    => 'http://apps.facebook.com/terryman_te/', # FacebookアプリURL
             scope           => 'read_stream,read_friendlists',       # 権限
         }
     }

@@ -84,7 +84,7 @@ __PACKAGE__->load_plugin(
             $c->session->set('name' => $name);
             $c->session->set('site' => 'facebook');
             $c->session->set('token' => $token);
-            return $c->redirect('http://apps.facebook.com/social_recruiting_te/');
+            return $c->redirect($c->config->{'Auth'}->{'Facebook'}->{'callback_uri'});
         },
         on_error => sub {
             my ( $c, $error ) = @_;
