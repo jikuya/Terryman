@@ -89,6 +89,8 @@ $ cd ~/perl5/app
 $ git clone https://github.com/jikuya/Terryman.git
 $ cd Terryman
 $ carton install
+  ※入らないモジュールがある場合は、そのモジュールを一端、cpanmでインストールする
+  ※例）cpanm モジュール名
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + Terrymanアプリ起動
