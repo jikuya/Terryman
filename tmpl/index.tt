@@ -18,13 +18,10 @@
             <label for="friends">尊敬する友達の名前を入力して下さい</label>
             <input id="friends">
         </div>
-   </div>
+    </div>
     </section>
-    <form method="post" action="/account/logout">
-        <input type="submit" value="logout" class="btn primary" />
-    </form>
 [% ELSE %]
-    <a href="/auth/facebook/authenticate">login</a>
+    エラーが発生しました。
 [% END %]
 
 </section>

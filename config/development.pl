@@ -23,5 +23,6 @@ if ( -d '/home/dotcloud/') {
             callback_uri    => 'http://apps.facebook.com/terryman_te/', # FacebookアプリURL
             scope           => 'read_stream,read_friendlists',       # 権限
         }
-    }
+    },
+    'LOGIN_URL' => 'http://localhost:5000/login',
 };

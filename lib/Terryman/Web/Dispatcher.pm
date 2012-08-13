@@ -14,18 +14,27 @@ any '/' => sub {
         my $ua = LWP::UserAgent->new();
         #my $res = $ua->get("https://graph.facebook.com/me/home?access_token=${token}");
         my $res = $ua->get("https://graph.facebook.com/me/friends?access_token=${token}");
-        $res->is_success or die $res->status_line;
-        $data = decode_json($res->decoded_content);
-        $c->render(
-            'index.tt',
-            {
-                name => $c->session->get('name'),
-                data => $data->{data},
-            }
-        );
+        if ($res->is_success){
+            $data = decode_json($res->decoded_content);
+            $c->render(
+                'index.tt',
+                {
+                    name      => $c->session->get('name'),
+                    data      => $data->{data},
+                }
+            );
+        } else {
+            $c->render('login.tt', {login_url => $c->config->{'LOGIN_URL'}});
+        }
     } else {
-         $c->redirect('/auth/facebook/authenticate');
+        $c->render('login.tt', {login_url => $c->config->{'LOGIN_URL'}});
     }
+};
+
+any '/login' => sub {
+    my ($c) = @_;
+    $c->session->remove('token');
+    $c->redirect('/auth/facebook/authenticate');
 };
 
 post '/account/logout' => sub {
