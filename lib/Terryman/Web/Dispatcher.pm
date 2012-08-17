@@ -8,25 +8,29 @@ use SQL::Interp qw(sql_interp);
 
 any '/' => sub {
     my ($c) = @_;
-    my $data;
-    my $token = $c->session->get('token');
-    my $sign = $c->req->param('signed_request');
-    if ( $token ) { # loggedin
-        my $ua = LWP::UserAgent->new();
-        #my $res = $ua->get("https://graph.facebook.com/me/home?access_token=${token}");
-        my $res = $ua->get("https://graph.facebook.com/me/friends?access_token=${token}");
-        if ($res->is_success){
-            $data = decode_json($res->decoded_content);
-            $c->render(
-                'index.tt',
-                {
-                    name      => $c->session->get('name'),
-                    data      => $data->{data},
-                }
-            );
-        } else {
-            $c->render('login.tt', {login_url => $c->config->{'LOGIN_URL'}});
-        }
+    if (my $data = facebookAuth($c)) {
+        $c->render(
+            'index.tt',
+            {
+                name      => $c->session->get('name'),
+                data      => $data->{data},
+            }
+        );
+    } else {
+        $c->render('login.tt', {login_url => $c->config->{'LOGIN_URL'}});
+    }
+};
+
+any '/register_friend' => sub {
+    my ($c) = @_;
+    if (my $data = facebookAuth($c)) {
+        $c->render(
+            'register_friend.tt',
+            {
+                name      => $c->session->get('name'),
+                data      => $data->{data},
+            }
+        );
     } else {
         $c->render('login.tt', {login_url => $c->config->{'LOGIN_URL'}});
     }
@@ -57,6 +61,26 @@ post '/account/logout' => sub {
     my ($c) = @_;
     $c->session->expire();
     $c->redirect('/');
+};
+
+sub facebookAuth {
+    my ($c) = @_;
+    my $data;
+    my $token = $c->session->get('token');
+    my $sign = $c->req->param('signed_request');
+    if ( $token ) { # loggedin
+        my $ua = LWP::UserAgent->new();
+        #my $res = $ua->get("https://graph.facebook.com/me/home?access_token=${token}");
+        my $res = $ua->get("https://graph.facebook.com/me/friends?access_token=${token}");
+        if ($res->is_success){
+            $data = decode_json($res->decoded_content);
+        } else {
+            $c->render('login.tt', {login_url => $c->config->{'LOGIN_URL'}});
+        }
+    } else {
+        $c->render('login.tt', {login_url => $c->config->{'LOGIN_URL'}});
+    }
+    return $data;
 };
 
 1;

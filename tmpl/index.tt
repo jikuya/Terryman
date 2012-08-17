@@ -3,34 +3,15 @@
 <section>
 
 [% IF data %]
-    <script type="text/javascript">
-        var friends = [
-        [% FOR v IN data %]
-            {label:"[% v.name %]",id:"[% v.id %]",name:"[% v.name %]"},
-        [% END %]
-        ];
-    </script>
-
     こんにちは [% name %] さん
     <section>
     <div class="sample">
-        <div class="ui-widget">
-            <label for="friends">あなたの尊敬する友達の名前を入力して下さい</label>
-            <input id="friends">
-            <ul id="selected"></ul>
-        </div>
+        <a href="/register_friend">あなたの尊敬する友達の名前を登録して下さい</a>
     </div>
     </section>
 [% ELSE %]
     エラーが発生しました。
 [% END %]
-
-<form action="/regist" method="post" id="tags">
-    <p>
-        <input type="texts" name="tag[]" value="" class="tag"/>
-        <input type="submit" name="save" value="Save"/>
-    </p>
-</form>
 
 </section>
 
