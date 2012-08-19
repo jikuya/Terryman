@@ -81,7 +81,9 @@ __PACKAGE__->load_plugin(
         module => 'Facebook',
         on_finished => sub {
             my ($c, $token, $user) = @_;
+            my $id   = $user->{id} || die;
             my $name = $user->{name} || die;
+            $c->session->set('id'   => $id);
             $c->session->set('name' => $name);
             $c->session->set('site' => 'facebook');
             $c->session->set('token' => $token);

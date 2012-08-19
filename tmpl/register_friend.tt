@@ -18,7 +18,7 @@
         <div class="modal-body">
             <div class="ui-widget">
                 <input id="friends">
-                <span id='friendName'></span>
+                <span id='friendSpan'></span>
             </div>
         </div>
         <div class="modal-footer">
@@ -28,13 +28,16 @@
         </div>
     </div>
 
-    <form action="/regist" method="post" id="tags">
+    <form action="/register_friend_complete" method="post" id="tags">
     <div class="modal hide fade" id="tagModal">
         <div class="modal-header">
             <h3>尊敬する人の職種やスキルを入力して下さい</h3>
         </div>
         <div class="modal-body">
-            <input type="texts" name="tag[]" value="" class="tag"/>
+            <span id='friendNameInTag'></span>
+            <input type="texts"  name="tag[]" value="" class="tag"/>
+            <input type="hidden" name="friendId"   value="" id="friendId">
+            <input type="hidden" name="friendName" value="" id="friendName">
         </div>
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" id="tagModalNext" />完了</button>
@@ -51,8 +54,11 @@ $(function(){
     $("#friends").autocomplete({
         source: friends,
         select: function(event, ui) {
-            var friend_elem = '<br><img src="http://graph.facebook.com/'+ui.item.id+'/picture">' + ui.item.name 
-            $('#friendName').append(friend_elem);
+            var friend_elem = '<br><img src="http://graph.facebook.com/'+ui.item.id+'/picture">' + ui.item.name;
+            $('#friendSpan').append(friend_elem);
+            $('#friendNameInTag').append(friend_elem);
+            $('#friendId').val(ui.item.id);
+            $('#friendName').val(ui.item.name);
             $("#friends").attr("disabled","disabled");
             $("#friendModalNext").show();
             $("#friendModalChange").show();
