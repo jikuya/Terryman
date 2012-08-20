@@ -25,6 +25,7 @@ WriteMakefile(
         'Net::Server::SS::PreFork'        => '0.05',
         'Amon2::Plugin::Web::Auth'        => '0.02',
         'Facebook::Graph'                 => '1.0401',
+        'DBD::mysql'                      => '4.021',
     },
     MIN_PERL_VERSION => '5.008001',
     (-d 'xt' and $ENV{AUTOMATED_TESTING} || $ENV{RELEASE_TESTING}) ? (

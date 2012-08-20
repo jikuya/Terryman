@@ -3,19 +3,19 @@ CREATE TABLE IF NOT EXISTS sessions (
     session_data TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS respecteds (
-    id           INTEGER PRIMARY KEY,
-    from_id      INTEGER,
-    to_id        INTEGER,
-    to_name      TEXT,
-    tags         TEXT,
+    id           INTEGER PRIMARY KEY AUTO_INCREMENT,
+    from_id      BIGINT,
+    to_id        BIGINT,
+    to_name      VARCHAR(255),
+    tags         VARCHAR(255),
     UNIQUE KEY (from_id,to_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS tags (
-    id           INTEGER PRIMARY KEY,
-    text         TEXT NOT NULL,
+    id           INTEGER PRIMARY KEY AUTO_INCREMENT,
+    text         VARCHAR(255) NOT NULL,
     UNIQUE KEY (text)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT OR IGNORE INTO tags ('id', 'text') VALUES
+INSERT IGNORE INTO tags (id, text) VALUES
     (1, 'perl'),
     (2, 'mysql'),
     (3, 'Amon2'),

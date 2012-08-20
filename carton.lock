@@ -186,7 +186,7 @@
                "Tokuhiro Matsuno <tokuhirom AAJKLFJEF GMAIL COM>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Install version 1.02, CPAN::Meta::Converter version 2.112150, CPAN::Meta::Converter version 2.120630",
+            "generated_by" : "Module::Install version 1.02, CPAN::Meta::Converter version 2.120630",
             "license" : [
                "perl_5"
             ],
@@ -266,7 +266,7 @@
                "version" : "0.01"
             }
          },
-         "target" : "Amon2::Auth",
+         "target" : "Amon2::Plugin::Web::Auth",
          "version" : "0.02"
       },
       "Amon2::DBI" : {
@@ -586,7 +586,7 @@
                "version" : "0.34"
             }
          },
-         "target" : "Class::Accessor",
+         "target" : "Class::Accessor::Fast",
          "version" : "0.34"
       },
       "Class::Data::Inheritable" : {
@@ -974,6 +974,83 @@
          },
          "target" : "DBD::SQLite",
          "version" : "1.37"
+      },
+      "DBD::mysql" : {
+         "dist" : "DBD-mysql-4.021",
+         "mymeta" : {
+            "abstract" : "A MySQL driver for the Perl5 Database Interface (DBI)",
+            "author" : [
+               "Rudy Lippan <rlippan@remotelinux.com>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.55_02, CPAN::Meta::Converter version 2.120630",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "DBD-mysql",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Test::More" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "DBI" : "1.08"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "DBI" : "1.08",
+                     "Data::Dumper" : "0",
+                     "perl" : "5.005"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "repository" : {
+                  "url" : "https://github.com/CaptTofu/DBD-mysql"
+               }
+            },
+            "version" : "4.021"
+         },
+         "name" : "DBD::mysql",
+         "pathname" : "C/CA/CAPTTOFU/DBD-mysql-4.021.tar.gz",
+         "provides" : {
+            "Bundle::DBD::mysql" : {
+               "file" : "Bundle/DBD/mysql.pm",
+               "version" : "4.004"
+            },
+            "DBD::mysql" : {
+               "file" : "DBD/mysql.pm",
+               "version" : "4.021"
+            },
+            "DBD::mysql::GetInfo" : {
+               "file" : "DBD/mysql/GetInfo.pm"
+            },
+            "DBD::mysql::db" : {
+               "file" : "DBD/mysql.pm"
+            },
+            "DBD::mysql::dr" : {
+               "file" : "DBD/mysql.pm"
+            },
+            "DBD::mysql::st" : {
+               "file" : "DBD/mysql.pm"
+            }
+         },
+         "target" : "DBD::mysql",
+         "version" : "4.021"
       },
       "DBI" : {
          "dist" : "DBI-1.622",
@@ -7654,190 +7731,6 @@
          "target" : "Encode::Locale",
          "version" : "1.03"
       },
-      "ExtUtils::MakeMaker" : {
-         "dist" : "ExtUtils-MakeMaker-6.62",
-         "mymeta" : {
-            "abstract" : "Create a module Makefile",
-            "author" : [
-               "Michael G Schwern <schwern@pobox.com>"
-            ],
-            "dynamic_config" : 0,
-            "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112150, CPAN::Meta::Converter version 2.120630",
-            "license" : [
-               "perl_5"
-            ],
-            "meta-spec" : {
-               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-               "version" : "2"
-            },
-            "name" : "ExtUtils-MakeMaker",
-            "no_index" : {
-               "directory" : [
-                  "t",
-                  "inc",
-                  "bundled",
-                  "my"
-               ],
-               "package" : [
-                  "DynaLoader",
-                  "in"
-               ]
-            },
-            "prereqs" : {
-               "build" : {
-                  "requires" : {
-                     "Data::Dumper" : "0"
-                  }
-               },
-               "configure" : {
-                  "requires" : {}
-               },
-               "runtime" : {
-                  "requires" : {
-                     "DirHandle" : "0",
-                     "File::Basename" : "0",
-                     "File::Spec" : "0.8",
-                     "Pod::Man" : "0",
-                     "perl" : "5.006"
-                  }
-               }
-            },
-            "release_status" : "stable",
-            "resources" : {
-               "bugtracker" : {
-                  "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=ExtUtils-MakeMaker"
-               },
-               "homepage" : "http://makemaker.org",
-               "license" : [
-                  "http://dev.perl.org/licenses/"
-               ],
-               "repository" : {
-                  "url" : "http://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker"
-               },
-               "x_MailingList" : "makemaker@perl.org"
-            },
-            "version" : "6.62"
-         },
-         "name" : "ExtUtils::MakeMaker",
-         "pathname" : "M/MS/MSCHWERN/ExtUtils-MakeMaker-6.62.tar.gz",
-         "provides" : {
-            "DynaLoader" : {
-               "file" : "ExtUtils/Mkbootstrap.pm"
-            },
-            "ExtUtils::Command::MM" : {
-               "file" : "ExtUtils/Command/MM.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::Liblist" : {
-               "file" : "ExtUtils/Liblist.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::Liblist::Kid" : {
-               "file" : "ExtUtils/Liblist/Kid.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM" : {
-               "file" : "ExtUtils/MM.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_AIX" : {
-               "file" : "ExtUtils/MM_AIX.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_Any" : {
-               "file" : "ExtUtils/MM_Any.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_BeOS" : {
-               "file" : "ExtUtils/MM_BeOS.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_Cygwin" : {
-               "file" : "ExtUtils/MM_Cygwin.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_DOS" : {
-               "file" : "ExtUtils/MM_DOS.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_Darwin" : {
-               "file" : "ExtUtils/MM_Darwin.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_MacOS" : {
-               "file" : "ExtUtils/MM_MacOS.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_NW5" : {
-               "file" : "ExtUtils/MM_NW5.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_OS2" : {
-               "file" : "ExtUtils/MM_OS2.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_QNX" : {
-               "file" : "ExtUtils/MM_QNX.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_UWIN" : {
-               "file" : "ExtUtils/MM_UWIN.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_Unix" : {
-               "file" : "ExtUtils/MM_Unix.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_VMS" : {
-               "file" : "ExtUtils/MM_VMS.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_VOS" : {
-               "file" : "ExtUtils/MM_VOS.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_Win32" : {
-               "file" : "ExtUtils/MM_Win32.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MM_Win95" : {
-               "file" : "ExtUtils/MM_Win95.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MY" : {
-               "file" : "ExtUtils/MY.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MakeMaker" : {
-               "file" : "ExtUtils/MakeMaker.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::MakeMaker::Config" : {
-               "file" : "ExtUtils/MakeMaker/Config.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::Mkbootstrap" : {
-               "file" : "ExtUtils/Mkbootstrap.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::Mksymlists" : {
-               "file" : "ExtUtils/Mksymlists.pm",
-               "version" : "6.62"
-            },
-            "ExtUtils::testlib" : {
-               "file" : "ExtUtils/testlib.pm",
-               "version" : "6.62"
-            },
-            "MM" : {
-               "file" : "ExtUtils/MM.pm"
-            },
-            "MY" : {
-               "file" : "ExtUtils/MakeMaker.pm"
-            }
-         },
-         "target" : "ExtUtils::MakeMaker",
-         "version" : "6.62"
-      },
       "Facebook::Graph" : {
          "dist" : "Facebook-Graph-1.0401",
          "mymeta" : {
@@ -9235,7 +9128,7 @@
                "version" : "6.03"
             }
          },
-         "target" : "HTTP::Headers",
+         "target" : "HTTP::Status",
          "version" : "6.03"
       },
       "HTTP::Negotiate" : {
@@ -9438,7 +9331,7 @@
                "Tatsuhiko Miyagawa <miyagawa@bulknews.net>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Install version 1.04, CPAN::Meta::Converter version 2.112150, CPAN::Meta::Converter version 2.120630",
+            "generated_by" : "Module::Install version 1.04, CPAN::Meta::Converter version 2.120630",
             "license" : [
                "perl_5"
             ],
@@ -9457,7 +9350,7 @@
             "prereqs" : {
                "build" : {
                   "requires" : {
-                     "ExtUtils::MakeMaker" : "6.62",
+                     "ExtUtils::MakeMaker" : "6.6302",
                      "Test::More" : "0"
                   }
                },
@@ -14396,101 +14289,6 @@
          "target" : "Test::SharedFork",
          "version" : "0.20"
       },
-      "Test::Simple" : {
-         "dist" : "Test-Simple-0.98",
-         "mymeta" : {
-            "abstract" : "Basic utilities for writing tests.",
-            "author" : [
-               "Michael G Schwern <schwern@pobox.com>"
-            ],
-            "dynamic_config" : 0,
-            "generated_by" : "ExtUtils::MakeMaker version 6.57_06, CPAN::Meta::Converter version 2.112150, CPAN::Meta::Converter version 2.120630",
-            "license" : [
-               "perl_5"
-            ],
-            "meta-spec" : {
-               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-               "version" : "2"
-            },
-            "name" : "Test-Simple",
-            "no_index" : {
-               "directory" : [
-                  "t",
-                  "inc"
-               ]
-            },
-            "prereqs" : {
-               "build" : {
-                  "requires" : {
-                     "ExtUtils::MakeMaker" : "0"
-                  }
-               },
-               "configure" : {
-                  "requires" : {
-                     "ExtUtils::MakeMaker" : "0"
-                  }
-               },
-               "runtime" : {
-                  "requires" : {
-                     "Test::Harness" : "2.03",
-                     "perl" : "5.006"
-                  }
-               }
-            },
-            "release_status" : "stable",
-            "resources" : {
-               "bugtracker" : {
-                  "web" : "http://github.com/schwern/test-more/issues"
-               },
-               "homepage" : "http://test-more.googlecode.com",
-               "license" : [
-                  "http://dev.perl.org/licenses/"
-               ],
-               "repository" : {
-                  "url" : "http://github.com/schwern/test-more/tree/master"
-               },
-               "x_MailingList" : "http://groups.google.com/group/test-more-users"
-            },
-            "version" : "0.98"
-         },
-         "name" : "Test::Simple",
-         "pathname" : "M/MS/MSCHWERN/Test-Simple-0.98.tar.gz",
-         "provides" : {
-            "Test::Builder" : {
-               "file" : "Test/Builder.pm",
-               "version" : "0.98"
-            },
-            "Test::Builder::IO::Scalar" : {
-               "file" : "Test/Builder/IO/Scalar.pm",
-               "version" : "2.110"
-            },
-            "Test::Builder::Module" : {
-               "file" : "Test/Builder/Module.pm",
-               "version" : "0.98"
-            },
-            "Test::Builder::Tester" : {
-               "file" : "Test/Builder/Tester.pm",
-               "version" : "1.22"
-            },
-            "Test::Builder::Tester::Color" : {
-               "file" : "Test/Builder/Tester/Color.pm",
-               "version" : "1.22"
-            },
-            "Test::Builder::Tester::Tie" : {
-               "file" : "Test/Builder/Tester.pm"
-            },
-            "Test::More" : {
-               "file" : "Test/More.pm",
-               "version" : "0.98"
-            },
-            "Test::Simple" : {
-               "file" : "Test/Simple.pm",
-               "version" : "0.98"
-            }
-         },
-         "target" : "Test::More",
-         "version" : "0.98"
-      },
       "Test::TCP" : {
          "dist" : "Test-TCP-1.17",
          "mymeta" : {
@@ -15068,50 +14866,6 @@
          "target" : "Text::Xslate",
          "version" : "1.5017"
       },
-      "Time::Piece" : {
-         "dist" : "Time-Piece-1.20",
-         "mymeta" : {
-            "abstract" : "Object Oriented time objects",
-            "author" : [
-               "Matt Sergeant"
-            ],
-            "dynamic_config" : 0,
-            "generated_by" : "ExtUtils::MakeMaker version 6.42, CPAN::Meta::Converter version 2.112150, CPAN::Meta::Converter version 2.120630",
-            "license" : [
-               "unknown"
-            ],
-            "meta-spec" : {
-               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-               "version" : "2"
-            },
-            "name" : "Time-Piece",
-            "prereqs" : {
-               "build" : {
-                  "requires" : {
-                     "ExtUtils::MakeMaker" : "0"
-                  }
-               },
-               "runtime" : {
-                  "requires" : {}
-               }
-            },
-            "release_status" : "stable",
-            "version" : "1.20"
-         },
-         "name" : "Time::Piece",
-         "pathname" : "M/MS/MSERGEANT/Time-Piece-1.20.tar.gz",
-         "provides" : {
-            "Time::Piece" : {
-               "file" : "Time/Piece.pm",
-               "version" : "1.20"
-            },
-            "Time::Seconds" : {
-               "file" : "Time/Seconds.pm"
-            }
-         },
-         "target" : "Time::Piece",
-         "version" : "1.20"
-      },
       "Tree::DAG_Node" : {
          "dist" : "Tree-DAG_Node-1.06",
          "mymeta" : {
@@ -15404,7 +15158,7 @@
                "file" : "URI/urn/oid.pm"
             }
          },
-         "target" : "URI::Escape",
+         "target" : "URI",
          "version" : "1.60"
       },
       "WWW::Mechanize" : {

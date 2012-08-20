@@ -93,7 +93,8 @@ $(function(){
     });
 
     $("#friendModalChange").click(function(event){
-        $("#friendName").empty();
+        $("#friendSpan").empty();
+        $("#friendNameInTag").empty();
         $("#friends").removeAttr("disabled");
         $("#friendModalNext").hide();
         $(this).hide();
